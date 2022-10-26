@@ -1,0 +1,125 @@
+html,
+body {
+  height: 100%;
+}
+
+#container {
+  background-color: aquamarine;
+  display: flex;
+  height: 100%;
+  /* This has flex-direction: row by default */
+}
+
+#sidebar {
+  background-color: burlywood;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+
+  /* Gap between the elements inside this flex. */
+  gap: 10px;
+
+  /* Size of the element in the flex, with respect to the main axis */
+  flex-basis: 20%;
+  /* This is inside a row, so it's like writing width: 20% */
+
+  /* Avoid this to shrink. */
+  flex-shrink: 0;
+}
+
+.sidebar-item {
+  background-color: coral;
+}
+
+#main-content {
+  background-color: tomato;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+#content-header {
+  background-color: darkgoldenrod;
+  padding: 10px;
+  /* No flex-grow - so, it does not grow */
+}
+
+#content-items {
+  background-color: teal;
+  flex-grow: 1;
+  display: flex;
+  flex-wrap: wrap;
+  /* Default: flex-direction: row; */
+
+  gap: 10px;
+  padding: 20px;
+  color: white;
+
+  /* Aligns items to the center, on the main axis - row, in this case */
+  justify-content: center;
+
+  /* Aligns items to the start, on the cross axis - column in this case */
+  /* align-items: flex-start;
+    ^^^^ THIS WILL NOT WORK HERE BECAUSE THIS IS MULTILINE FLEX, ELEMENTS ARE WRAPPING.
+  */
+  align-content: flex-start;
+
+  overflow-y: scroll;
+}
+
+.item {
+  width: 120px;
+  height: 120px;
+  background-color: brown;
+  display: flex;
+
+  /* Align to the center on the main axis.
+  This is a row so the main axis is the horizontal one. */
+  justify-content: center;
+
+  /* Align to the center on the cross axis.
+  This is a row, so the cross axis is the vertical one. */
+  align-items: center;
+}
+
+/* All the CSS that we wrote above is our Desktop CSS */
+
+@media screen and (min-width: 601px) and (max-width: 1024px) {
+  /* Tablet CSS */
+
+  .item {
+    width: 80px;
+    height: 80px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  /* Mobile CSS */
+
+  #container {
+    flex-direction: column;
+  }
+
+  #sidebar {
+    flex-basis: 20px;
+    padding: 4px;
+  }
+
+  #sidebar .sidebar-item {
+    display: none;
+  }
+
+  #content-items {
+    flex-direction: column;
+    flex-wrap: nowrap;
+
+    overflow-y: unset;
+
+    align-items: center;
+  }
+
+  .item {
+    height: 100px;
+    width: 100%;
+  }
+}
