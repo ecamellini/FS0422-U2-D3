@@ -1,0 +1,77 @@
+body {
+  color: white;
+  font-family: "Inter", sans-serif;
+}
+
+#container {
+  display: flex;
+  flex-direction: column;
+  background-image: linear-gradient(180deg, #0c1441 0%, #07071e 100%);
+  min-height: 100vh;
+}
+
+.selected-lang {
+  font-weight: bold;
+}
+
+/* It is ok to use a tag selector here,
+because a page has only one header */
+header {
+  padding: 30px 150px;
+  background-image: linear-gradient(180deg, #0b184b 0%, #090922 100%);
+  display: inline-flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+main {
+  padding: 30px 150px;
+  flex-grow: 1;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+main h1 {
+  width: 40%;
+  font-size: 60px;
+  line-height: 0.80;
+}
+
+main p {
+  width: 40%;
+  font-size: 20px;
+}
+
+main button {
+  border: none;
+  background-color: #00ffff;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+main>img {
+  position: absolute;
+  right: 200px;
+  top: -100px;
+  height: 130%;
+}
+
+section {
+  background-image: linear-gradient(91.54deg, rgba(149, 4, 132, 0.5) 2%, rgba(194, 18, 141, 0.5) 55.47%, rgba(64, 42, 171, 0.5) 109.5%);
+  padding: 30px 150px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+section h4 {
+  margin: 0px;
+  font-size: 50px;
+}
+
+section p {
+  margin: 0px;
+  font-weight: bold;
+}
